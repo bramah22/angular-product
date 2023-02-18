@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Printer edit test",
+      "price": 300,
+      "quantity": 60,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Phone",
+      "price": 400,
+      "quantity": 20,
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": 4,
+      "name": "Table",
+      "price": 247,
+      "quantity": 12,
+      "selected": true,
+      "available": true
+    },
+    {
+      "name": "test",
+      "price": "14",
+      "quantity": "3",
+      "selected": true,
+      "available": true,
+      "id": 5
+    }
+  ]
+}
