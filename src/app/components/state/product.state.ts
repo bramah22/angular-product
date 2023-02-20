@@ -11,3 +11,19 @@ export interface AppDataState<T> {
 export enum DataStateEnum {
   LOADING, LOADED, ERROR
 }
+
+export enum ProductActionType {
+  GET_ALL_PRODUCTS = "[Product] Get All Products",
+  GET_SELECTED_PRODUCTS = "[Product] Get Selected Products",
+  GET_AVAILABLE_PRODUCTS = "[Product] Get available Products",
+  SEARCH_PRODUCTS = "[Product] Search Products",
+  SELECT_PRODUCT = "[Product] Select Product",
+  NEW_PRODUCT = "[Product] New Product",
+  EDIT_PRODUCT = "[Product] Edit Product",
+  DELETE_PRODUCT = "[Product] Delete Product",
+}
+
+export interface ActionEvent {
+  type: ProductActionType,
+  payload?: any
+}
