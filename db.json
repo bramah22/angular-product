@@ -5,7 +5,7 @@
       "name": "Printer edit test",
       "price": 300,
       "quantity": 60,
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
@@ -13,7 +13,7 @@
       "name": "Phone",
       "price": 400,
       "quantity": 20,
-      "selected": true,
+      "selected": false,
       "available": false
     },
     {
@@ -28,7 +28,7 @@
       "name": "test",
       "price": "14",
       "quantity": "3",
-      "selected": true,
+      "selected": false,
       "available": true,
       "id": 5
     }
