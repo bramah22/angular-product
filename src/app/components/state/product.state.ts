@@ -21,6 +21,8 @@ export enum ProductActionType {
   NEW_PRODUCT = "[Product] New Product",
   EDIT_PRODUCT = "[Product] Edit Product",
   DELETE_PRODUCT = "[Product] Delete Product",
+  PRODUCT_ADDED = "[Product] Add Product",
+  PRODUCT_UPDATED = "[Product] Product Updated",
 }
 
 export interface ActionEvent {

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ProductsService} from "../../services/products.service";
+import {EventDriverService} from "../state/event.driver.service";
+import {ProductActionType} from "../state/product.state";
 
 @Component({
   selector: 'app-add-product',
@@ -15,7 +17,8 @@ export class AddProductComponent implements OnInit {
 
 
   constructor(private fb: FormBuilder,
-              private productService: ProductsService) {
+              private productService: ProductsService,
+              private eventDriverService: EventDriverService) {
   }
 
   ngOnInit() {
@@ -33,7 +36,8 @@ export class AddProductComponent implements OnInit {
     if (this.productFormGroup?.invalid) return;
     this.productService.save(this.productFormGroup?.value).subscribe(
       data => {
-        alert('Success ....')
+        this.eventDriverService.publishEvent({type: ProductActionType.PRODUCT_ADDED});
+        alert('Success ....');
       }
     )
   }

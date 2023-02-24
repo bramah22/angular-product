@@ -11,35 +11,10 @@ import {Product} from "../../../models/product";
 export class ProductsListComponent {
   @Input() productsInput$: Observable<AppDataState<Product[]>> | null = null;
 
-  @Output() productsEventEmitter: EventEmitter<ActionEvent> = new EventEmitter<ActionEvent>();
   readonly DataStateEnum = DataStateEnum;
 
 
   constructor() {
   }
 
-  onSelect(p: Product) {
-    this.productsEventEmitter.emit({
-      type: ProductActionType.SELECT_PRODUCT,
-      payload: p
-    });
-  }
-
-  onDelete(p: Product) {
-    this.productsEventEmitter.emit({
-      type: ProductActionType.DELETE_PRODUCT,
-      payload: p
-    });
-  }
-
-  onEdit(p: Product) {
-    this.productsEventEmitter.emit({
-      type: ProductActionType.EDIT_PRODUCT,
-      payload: p
-    });
-  }
-
-  onActionEvent($event: ActionEvent) {
-    this.productsEventEmitter.emit($event);
-  }
 }

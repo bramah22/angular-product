@@ -1,19 +1,11 @@
 {
   "products": [
     {
-      "id": 2,
-      "name": "Printer edit test",
-      "price": 300,
-      "quantity": 60,
-      "selected": false,
-      "available": true
-    },
-    {
       "id": 3,
       "name": "Phone",
       "price": 400,
       "quantity": 20,
-      "selected": false,
+      "selected": true,
       "available": false
     },
     {
@@ -31,6 +23,22 @@
       "selected": false,
       "available": true,
       "id": 5
+    },
+    {
+      "name": "test",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 6
+    },
+    {
+      "name": "ttttttt",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 7
     }
   ]
 }

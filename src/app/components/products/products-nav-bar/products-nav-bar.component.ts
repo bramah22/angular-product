@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {ActionEvent, ProductActionType} from "../../state/product.state";
+import {EventDriverService} from "../../state/event.driver.service";
 
 @Component({
   selector: 'app-products-nav-bar',
@@ -8,38 +9,55 @@ import {ActionEvent, ProductActionType} from "../../state/product.state";
 })
 export class ProductsNavBarComponent {
 
-  @Output() productEventEmitter: EventEmitter<ActionEvent> = new EventEmitter<ActionEvent>();
+ // @Output() productEventEmitter: EventEmitter<ActionEvent> = new EventEmitter<ActionEvent>();
 
-  constructor() {
+  constructor(private eventDriverService: EventDriverService) {
   }
   onGetAllProducts() {
-    this.productEventEmitter.emit({
+    this.eventDriverService.publishEvent({
+        type: ProductActionType.GET_ALL_PRODUCTS
+      });
+    /*this.productEventEmitter.emit({
       type: ProductActionType.GET_ALL_PRODUCTS
-    });
+    });*/
   }
 
   onGetSlectedProducts() {
-    this.productEventEmitter.emit({
+    this.eventDriverService.publishEvent({
+        type: ProductActionType.GET_SELECTED_PRODUCTS
+      });
+    /*this.productEventEmitter.emit({
       type: ProductActionType.GET_SELECTED_PRODUCTS
-    });
+    });*/
   }
 
   onGetAvaibleProducts() {
-    this.productEventEmitter.emit({
+
+    this.eventDriverService.publishEvent({
+        type: ProductActionType.GET_AVAILABLE_PRODUCTS
+      });
+   /* this.productEventEmitter.emit({
       type: ProductActionType.GET_AVAILABLE_PRODUCTS
-    });
+    });*/
   }
 
   onNewProduct() {
-    this.productEventEmitter.emit({
+    this.eventDriverService.publishEvent({
+        type: ProductActionType.NEW_PRODUCT
+      });
+    /*this.productEventEmitter.emit({
       type: ProductActionType.NEW_PRODUCT
-    });
+    });*/
   }
 
   onSeacrch(dataForm: any) {
-    this.productEventEmitter.emit({
+    this.eventDriverService.publishEvent({
+        type: ProductActionType.SEARCH_PRODUCTS,
+        payload: dataForm
+      });
+   /* this.productEventEmitter.emit({
       type: ProductActionType.SEARCH_PRODUCTS,
       payload: dataForm
-    });
+    });*/
   }
 }
